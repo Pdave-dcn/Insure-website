@@ -3,12 +3,15 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="font-karla">
-      <NavBar />
+    <>
+      <header>
+        <NavBar />
+      </header>
       <main>
         <MainPage />
       </main>
-    </div>
+      <footer></footer>
+    </>
   );
 }
 
