@@ -24,7 +24,9 @@ const AdvantagesSection = () => {
     <>
       <div className="flex flex-col items-center mt-37">
         <div className="w-35 h-[1px] bg-dark-grayish-violet mb-6"></div>
-        <h2 className="text-[2.7rem] font-dmSerif mb-13">We're different</h2>
+        <h2 className="text-[2.7rem] text-very-dark-violet font-dmSerif mb-13">
+          We're different
+        </h2>
         <div className="flex flex-col gap-11 p-6.5 mb-20">
           {advantages.map((advantage) => (
             <div key={advantage.name} className="flex flex-col items-center">
@@ -33,7 +35,9 @@ const AdvantagesSection = () => {
                 alt={advantage.name}
                 className="mb-9"
               />
-              <h3 className="font-dmSerif text-3xl mb-4">{advantage.name}</h3>
+              <h3 className="font-dmSerif text-3xl text-very-dark-violet mb-4">
+                {advantage.name}
+              </h3>
               <p className="text-center text-dark-grayish-violet">
                 {advantage.description}
               </p>
