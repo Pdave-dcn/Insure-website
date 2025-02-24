@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import MainPage from "./components/MainPage";
 import NavBar from "./components/NavBar";
 
@@ -10,7 +11,9 @@ function App() {
       <main>
         <MainPage />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

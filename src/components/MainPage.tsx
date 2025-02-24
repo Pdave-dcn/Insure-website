@@ -31,7 +31,7 @@ const MainPage = () => {
 
       <AdvantagesSection />
 
-      <div className=" relative flex flex-col items-center justify-center bg-dark-violet text-white p-4.5 aspect-square w-[90%] mb-28">
+      <div className=" relative flex flex-col items-center justify-center bg-dark-violet text-white p-4.5 aspect-square w-[90%] mb-35">
         <img
           src="images/bg-pattern-how-we-work-mobile.svg"
           alt="Image pattern"
