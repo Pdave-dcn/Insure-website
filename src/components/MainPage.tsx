@@ -2,7 +2,7 @@ import AdvantagesSection from "./AdvantagesSection";
 
 const MainPage = () => {
   return (
-    <div className="container">
+    <div className="container flex flex-col items-center">
       <img src="images/image-intro-desktop.jpg" alt="Family image" />
       <div className="bg-dark-violet relative">
         <img
@@ -28,7 +28,22 @@ const MainPage = () => {
           />
         </div>
       </div>
+
       <AdvantagesSection />
+
+      <div className=" relative flex flex-col items-center justify-center bg-dark-violet text-white p-4.5 aspect-square w-[90%] mb-28">
+        <img
+          src="images/bg-pattern-how-we-work-mobile.svg"
+          alt="Image pattern"
+          className="absolute right-0"
+        />
+        <h4 className="font-dmSerif text-[2.7rem] leading-none text-center mb-9">
+          Find out more about how we work.
+        </h4>
+        <button type="button" className="border-2 py-2 px-5.5">
+          HOW WE WORK
+        </button>
+      </div>
     </div>
   );
 };
