@@ -40,24 +40,48 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="relative flex justify-between items-center p-5 bg-white">
+    <nav className="relative flex justify-between items-center p-5 bg-white lg:px-30">
       <img src="images/logo.svg" alt="Logo icon" className="object-contain" />
-      <div>
-        <button type="button" onClick={() => setIsOpen(true)}>
+
+      {/* Mobile menu button */}
+      <div className="lg:hidden">
+        <button type="button" onClick={() => setIsOpen(!isOpen)}>
           <img
-            src="images/icon-hamburger.svg"
-            alt="Hamburger menu"
-            className={`${isOpen ? "hidden" : "block"}`}
-          />
-        </button>
-        <button type="button" onClick={() => setIsOpen(false)}>
-          <img
-            src="images/icon-close.svg"
-            alt="Close menu"
-            className={`${!isOpen ? "hidden" : "block"}`}
+            src={isOpen ? "images/icon-close.svg" : "images/icon-hamburger.svg"}
+            alt={isOpen ? "Close menu" : "Hamburger menu"}
           />
         </button>
       </div>
+
+      {/* Desktop navigation */}
+      <div className="hidden lg:flex items-center space-x-8">
+        <a
+          href="#"
+          className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
+        >
+          HOW WE WORK
+        </a>
+        <a
+          href="#"
+          className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
+        >
+          BLOG
+        </a>
+        <a
+          href="#"
+          className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
+        >
+          ACCOUNT
+        </a>
+        <a
+          href="#"
+          className="border-2 border-very-dark-violet py-2 px-6 text-dark-grayish-violet hover:bg-very-dark-violet hover:text-white hover:font-bold transition-all"
+        >
+          VIEW PLANS
+        </a>
+      </div>
+
+      {/* Mobile menu */}
       <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
@@ -65,26 +89,44 @@ const NavBar = () => {
             animate="visible"
             exit="exit"
             variants={containerVariants}
-            className="absolute inset-0 top-20 w-full h-[800px] bg-very-dark-violet text-white"
+            className="absolute inset-0 top-20 w-full h-screen bg-very-dark-violet text-white lg:hidden"
           >
             <motion.ul
               initial="hidden"
               animate="visible"
               exit="exit"
               variants={listVariants}
-              className="flex flex-col items-center gap-7.5 mt-10"
+              className="flex flex-col items-center gap-7 mt-10"
             >
               <motion.li variants={itemVariants}>
-                <a href="#">HOW WE WORK</a>
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-300 hover:font-bold transition-all"
+                >
+                  HOW WE WORK
+                </a>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a href="#">BLOG</a>
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-300 hover:font-bold transition-all"
+                >
+                  BLOG
+                </a>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a href="#">ACCOUNT</a>
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-300 hover:font-bold transition-all"
+                >
+                  ACCOUNT
+                </a>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a href="#" className="border-2 py-2 px-30">
+                <a
+                  href="#"
+                  className="border-2 py-2 px-8 text-white hover:bg-white hover:text-very-dark-violet hover:font-bold transition-all"
+                >
                   VIEW PLANS
                 </a>
               </motion.li>
@@ -92,7 +134,7 @@ const NavBar = () => {
             <img
               src="images/bg-pattern-mobile-nav.svg"
               alt="Pattern image"
-              className="absolute top-58 right-0"
+              className="absolute bottom-0 right-0 w-full lg:hidden"
             />
           </motion.div>
         )}
