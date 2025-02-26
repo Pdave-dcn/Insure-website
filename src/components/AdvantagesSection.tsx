@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const AdvantagesSection = () => {
   const advantages = [
     {
@@ -20,16 +22,62 @@ const AdvantagesSection = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+        duration: 0.3,
+      },
+    },
+  };
+
+  const childrenVariants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <>
-      <div className="flex flex-col items-center mt-37 p-6.5 lg:px-30 lg:mt-90 lg:items-start">
-        <div className="w-35 h-[1px] bg-dark-grayish-violet mb-6"></div>
-        <h2 className="text-[2.7rem] text-very-dark-violet font-dmSerif mb-13">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+        className="flex flex-col items-center mt-37 p-6.5 lg:px-30 lg:mt-90 lg:items-start"
+      >
+        <motion.div
+          variants={childrenVariants}
+          className="w-35 h-[1px] bg-dark-grayish-violet mb-6"
+        ></motion.div>
+        <motion.h2
+          variants={childrenVariants}
+          className="text-[2.7rem] text-very-dark-violet font-dmSerif mb-13"
+        >
           We're different
-        </h2>
-        <div className="flex flex-col gap-11 mb-20 lg:flex-row lg:gap-20 lg:mb-35">
+        </motion.h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+          className="flex flex-col gap-11 mb-20 lg:flex-row lg:gap-20 lg:mb-35"
+        >
           {advantages.map((advantage) => (
-            <div
+            <motion.div
+              variants={childrenVariants}
               key={advantage.name}
               className="flex flex-col items-center lg:items-start"
             >
@@ -44,10 +92,10 @@ const AdvantagesSection = () => {
               <p className="text-center text-dark-grayish-violet lg:text-start">
                 {advantage.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };
