@@ -1,9 +1,69 @@
 import AdvantagesSection from "./AdvantagesSection";
+import { motion } from "motion/react";
 
 const MainPage = () => {
+  // Left side animation variants - sliding from left
+  const slideLeftContainerVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+        duration: 0.3,
+      },
+    },
+  };
+
+  const slideLeftChildVariants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  // Right side animation variants - sliding from right
+  const slideRightContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+        duration: 0.3,
+      },
+    },
+  };
+
+  const slideRightChildVariants = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="flex flex-col items-center">
-      <img
+    <div className="flex flex-col items-center overflow-x-hidden">
+      <motion.img
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
         src="images/image-intro-mobile.jpg"
         alt="Family image"
         className="lg:hidden"
@@ -20,38 +80,64 @@ const MainPage = () => {
           alt="Image pattern"
           className="hidden lg:block absolute left-0 -bottom-85"
         />
-        <div className="text-white text-center p-6.5 -mt-25 lg:text-start lg:w-[600px] lg:mt-12 lg:ml-25 lg:mb-12">
-          <div className="hidden lg:block w-35 h-[1px] bg-dark-grayish-violet mb-9"></div>
-          <h1 className="font-dmSerif text-[2.7rem] leading-none mb-4.5">
+
+        {/* Left side animation content */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideLeftContainerVariants}
+          className="text-white text-center p-6.5 -mt-25 lg:text-start lg:w-[600px] lg:mt-12 lg:ml-25 lg:mb-12"
+        >
+          <motion.div
+            variants={slideLeftChildVariants}
+            className="hidden lg:block w-35 h-[1px] bg-dark-grayish-violet mb-9"
+          ></motion.div>
+          <motion.h1
+            variants={slideLeftChildVariants}
+            className="font-dmSerif text-[2.7rem] leading-none mb-4.5"
+          >
             Humanizing <br /> your insurance.
-          </h1>
-          <p className="mb-7">
+          </motion.h1>
+          <motion.p variants={slideLeftChildVariants} className="mb-7">
             Get your life insurance coverage easier and faster. We blend our
             expertise and technology to help you find the plan that's right for
             you. Ensure you and your love ones are protect.
-          </p>
-          <button
+          </motion.p>
+          <motion.button
+            variants={slideLeftChildVariants}
             type="button"
             className="border p-1.5 px-6 mb-13 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
           >
             VIEW PLANS
-          </button>
-          <img
+          </motion.button>
+          <motion.img
             src="images/bg-pattern-intro-right-mobile.svg"
             alt="Image pattern"
             className="absolute right-0 top-77 lg:hidden"
           />
-          <img
+        </motion.div>
+
+        {/* Right side animation content */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideRightContainerVariants}
+        >
+          <motion.img
+            variants={slideRightChildVariants}
             src="images/bg-pattern-intro-right-desktop.svg"
             alt="Image pattern"
             className="hidden absolute right-0 top-0 lg:block z-10"
           />
-        </div>
-        <img
-          src="images/image-intro-desktop.jpg"
-          alt="Family image"
-          className="hidden lg:block absolute right-30 top-20"
-        />
+          <motion.img
+            variants={slideRightChildVariants}
+            src="images/image-intro-desktop.jpg"
+            alt="Family image"
+            className="hidden lg:block absolute right-30 top-20"
+          />
+        </motion.div>
       </div>
 
       <AdvantagesSection />
@@ -63,20 +149,31 @@ const MainPage = () => {
             alt="Image pattern"
             className="absolute right-0 lg:hidden"
           />
-          <img
+          <motion.img
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             src="images/bg-pattern-how-we-work-desktop.svg"
             alt="Image pattern"
             className="hidden absolute right-0 lg:block"
           />
-          <h4 className="font-dmSerif text-[2.7rem] lg:text-5xl leading-none text-center mb-9 lg:mb-0 lg:text-start lg:w-110">
+          <motion.h4
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-dmSerif text-[2.7rem] lg:text-5xl leading-none text-center mb-9 lg:mb-0 lg:text-start lg:w-110"
+          >
             Find out more about how we work.
-          </h4>
-          <button
+          </motion.h4>
+          <motion.button
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             type="button"
             className="border-2 py-2 px-5.5 lg:px-7.5 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
           >
             HOW WE WORK
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
