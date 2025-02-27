@@ -1,4 +1,8 @@
 import { motion } from "motion/react";
+import {
+  slideLeftContainerVariants,
+  slideLeftChildVariants,
+} from "../animationsVariants";
 
 const AdvantagesSection = () => {
   const advantages = [
@@ -22,48 +26,21 @@ const AdvantagesSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-        duration: 0.3,
-      },
-    },
-  };
-
-  const childrenVariants = {
-    hidden: {
-      opacity: 0,
-      x: -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <>
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
+        variants={slideLeftContainerVariants}
         className="flex flex-col items-center mt-37 p-6.5 lg:px-30 lg:mt-90 lg:items-start"
       >
         <motion.div
-          variants={childrenVariants}
+          variants={slideLeftChildVariants}
           className="w-35 h-[1px] bg-dark-grayish-violet mb-6"
         ></motion.div>
         <motion.h2
-          variants={childrenVariants}
+          variants={slideLeftChildVariants}
           className="text-[2.7rem] text-very-dark-violet font-dmSerif mb-13"
         >
           We're different
@@ -72,12 +49,12 @@ const AdvantagesSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
+          variants={slideLeftContainerVariants}
           className="flex flex-col gap-11 mb-20 lg:flex-row lg:gap-20 lg:mb-35"
         >
           {advantages.map((advantage) => (
             <motion.div
-              variants={childrenVariants}
+              variants={slideLeftChildVariants}
               key={advantage.name}
               className="flex flex-col items-center lg:items-start"
             >

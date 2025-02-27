@@ -1,63 +1,13 @@
 import AdvantagesSection from "./AdvantagesSection";
 import { motion } from "motion/react";
+import {
+  slideLeftContainerVariants,
+  slideLeftChildVariants,
+  slideRightContainerVariants,
+  slideRightChildVariants,
+} from "../animationsVariants";
 
 const MainPage = () => {
-  // Left side animation variants - sliding from left
-  const slideLeftContainerVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-        duration: 0.3,
-      },
-    },
-  };
-
-  const slideLeftChildVariants = {
-    hidden: {
-      opacity: 0,
-      x: -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
-  // Right side animation variants - sliding from right
-  const slideRightContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-        duration: 0.3,
-      },
-    },
-  };
-
-  const slideRightChildVariants = {
-    hidden: {
-      opacity: 0,
-      x: 100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <div className="flex flex-col items-center overflow-x-hidden">
       <motion.img
