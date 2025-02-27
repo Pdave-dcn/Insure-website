@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,17 @@ const NavBar = () => {
     exit: { opacity: 0, x: -100 },
   };
 
+  const basePath = import.meta.env.BASE_URL;
+
   return (
-    <nav className="relative flex justify-between items-center p-5 bg-white lg:px-30">
-      <img src="images/logo.svg" alt="Logo icon" className="object-contain" />
+    <nav className="relative flex justify-between items-center p-5 bg-white border-b border-very-dark-violet lg:px-30">
+      <Link to={`${basePath}`}>
+        <img
+          src="images/logo.svg"
+          alt="Logo icon"
+          className="object-contain cursor-pointer"
+        />
+      </Link>
 
       {/* Mobile menu button */}
       <div className="lg:hidden">
@@ -55,12 +64,12 @@ const NavBar = () => {
 
       {/* Desktop navigation */}
       <div className="hidden lg:flex items-center space-x-8">
-        <a
-          href="#"
+        <Link
+          to={`${basePath}how-we-work`}
           className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
         >
           HOW WE WORK
-        </a>
+        </Link>
         <a
           href="#"
           className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
@@ -99,12 +108,12 @@ const NavBar = () => {
               className="flex flex-col items-center gap-7 mt-10"
             >
               <motion.li variants={itemVariants}>
-                <a
-                  href="#"
+                <Link
+                  to={`${basePath}how-we-work`}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   HOW WE WORK
-                </a>
+                </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
                 <a
