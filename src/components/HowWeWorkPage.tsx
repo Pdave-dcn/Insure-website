@@ -5,7 +5,7 @@ import {
   slideRightChildVariants,
 } from "./animationsVariants";
 
-const HowWeWork = () => {
+const HowWeWorkPage = () => {
   const elements = [
     {
       title: "Simple. Transparent. Hassle-Free.",
@@ -109,4 +109,4 @@ const HowWeWork = () => {
   );
 };
 
-export default HowWeWork;
+export default HowWeWorkPage;
