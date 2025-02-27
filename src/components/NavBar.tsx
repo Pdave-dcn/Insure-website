@@ -70,12 +70,12 @@ const NavBar = () => {
         >
           HOW WE WORK
         </Link>
-        <a
-          href="#"
+        <Link
+          to={`${basePath}blog`}
           className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
         >
           BLOG
-        </a>
+        </Link>
         <a
           href="#"
           className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
@@ -98,7 +98,7 @@ const NavBar = () => {
             animate="visible"
             exit="exit"
             variants={containerVariants}
-            className="absolute inset-0 top-20 w-full h-screen bg-very-dark-violet text-white lg:hidden"
+            className="absolute z-50 inset-0 top-20 w-full h-screen bg-very-dark-violet text-white lg:hidden"
           >
             <motion.ul
               initial="hidden"
@@ -116,12 +116,12 @@ const NavBar = () => {
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a
-                  href="#"
+                <Link
+                  to={`${basePath}blog`}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   BLOG
-                </a>
+                </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
                 <a
