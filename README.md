@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Insure Insurance Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive insurance company website built with React, TypeScript, and Framer Motion animations. This project showcases a professional web application for an insurance company with multiple pages and interactive features.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive design that works on mobile and desktop
+- Smooth page transitions and animations using Framer Motion
+- Multiple page routes including:
+  - Home page with company overview
+  - Plans page with insurance options
+  - How We Work page explaining processes
+  - Blog page with articles and news
+  - Account page for user authentication
+- Interactive navigation menu
+- Modern UI components with hover effects
+- Tailwind CSS for styling
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Framer Motion
+- React Router
+- Tailwind CSS
+- Vite
 
-- Configure the top-level `parserOptions` property like this:
+## 📱 Pages
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Home**: Company overview and main services
+- **Plans**: Insurance plan options and pricing
+- **How We Work**: Company processes and methodology
+- **Blog**: Articles and insurance-related content
+- **Account**: User authentication and account management
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## ✨ Animation Features
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Slide animations for page transitions
+- Fade effects for content loading
+- Interactive hover states
+- Mobile menu animations
+- Staggered content reveal
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🎨 Design Features
+
+- Clean, professional layout
+- Responsive design patterns
+- Consistent branding
+- Modern typography with custom fonts
+- Strategic use of whitespace
+
+## 💻 Setup
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run development server: `npm run dev`
+4. Build for production: `npm run build`
+
+## 🔗 Navigation
+
+The site uses React Router for navigation with a base path configuration for flexible deployment options. All routes are managed through the main App component with proper scroll management.
