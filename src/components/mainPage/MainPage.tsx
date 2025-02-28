@@ -6,8 +6,10 @@ import {
   slideRightContainerVariants,
   slideRightChildVariants,
 } from "../animationsVariants";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
+  const basePath = import.meta.env.BASE_URL;
   return (
     <div className="flex flex-col items-center overflow-x-hidden">
       <motion.img
@@ -54,13 +56,15 @@ const MainPage = () => {
             expertise and technology to help you find the plan that's right for
             you. Ensure you and your love ones are protect.
           </motion.p>
-          <motion.button
-            variants={slideLeftChildVariants}
-            type="button"
-            className="border p-1.5 px-6 mb-13 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
-          >
-            VIEW PLANS
-          </motion.button>
+          <Link to={`${basePath}plans`}>
+            <motion.button
+              variants={slideLeftChildVariants}
+              type="button"
+              className="border p-1.5 px-6 mb-13 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
+            >
+              VIEW PLANS
+            </motion.button>
+          </Link>
           <motion.img
             src="images/bg-pattern-intro-right-mobile.svg"
             alt="Image pattern"
@@ -115,15 +119,18 @@ const MainPage = () => {
           >
             Find out more about how we work.
           </motion.h4>
-          <motion.button
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            type="button"
-            className="border-2 py-2 px-5.5 lg:px-7.5 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
-          >
-            HOW WE WORK
-          </motion.button>
+
+          <Link to={`${basePath}how-we-work`}>
+            <motion.button
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              type="button"
+              className="border-2 py-2 px-5.5 lg:px-7.5 hover:bg-white hover:text-dark-violet font-medium hover:font-bold transition-all duration-300 relative z-10 cursor-pointer"
+            >
+              HOW WE WORK
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

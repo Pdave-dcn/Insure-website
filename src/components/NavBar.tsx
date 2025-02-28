@@ -45,7 +45,9 @@ const NavBar = () => {
   return (
     <nav className="relative flex justify-between items-center p-5 bg-white border-b border-very-dark-violet lg:px-30">
       <Link to={`${basePath}`}>
-        <img
+        <motion.img
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
           src="images/logo.svg"
           alt="Logo icon"
           className="object-contain cursor-pointer"
@@ -82,12 +84,12 @@ const NavBar = () => {
         >
           ACCOUNT
         </Link>
-        <a
-          href="#"
+        <Link
+          to={`${basePath}plans`}
           className="border-2 border-very-dark-violet py-2 px-6 text-dark-grayish-violet hover:bg-very-dark-violet hover:text-white hover:font-bold transition-all"
         >
           VIEW PLANS
-        </a>
+        </Link>
       </div>
 
       {/* Mobile menu */}
@@ -124,20 +126,20 @@ const NavBar = () => {
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a
-                  href="#"
+                <Link
+                  to={`${basePath}account`}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   ACCOUNT
-                </a>
+                </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <a
-                  href="#"
+                <Link
+                  to={`${basePath}plans`}
                   className="border-2 py-2 px-8 text-white hover:bg-white hover:text-very-dark-violet hover:font-bold transition-all"
                 >
                   VIEW PLANS
-                </a>
+                </Link>
               </motion.li>
             </motion.ul>
             <img
