@@ -27,7 +27,7 @@ const BlogPage = () => {
         className="relative flex flex-col items-center justify-center w-full h-[300px] lg:h-[500px]"
       >
         <div
-          className="absolute -z-10 inset-0 bg-[url('images/bg-blog-intro-mobile.png')] lg:bg-[url('images/bg-blog-intro.jpg')] bg-cover bg-center 
+          className="absolute -z-10 inset-0 bg-[url('/images/bg-blog-intro-mobile.png')] lg:bg-[url('/images/bg-blog-intro.jpg')] bg-cover bg-center 
           before:content-[''] before:absolute before:inset-0 before:bg-black/50"
         />
         <h1 className="relative z-10 font-dmSerif text-2xl text-white text-center p-5 lg:text-5xl lg:max-w-4xl">
