@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   slideLeftContainerVariants,
   slideLeftChildVariants,
-} from "./animationsVariants";
+} from "../animationsVariants";
 
 const AccountPage = () => {
   const [isLogin, setIsLogin] = useState(true);

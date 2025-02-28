@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import HowWeWorkPage from "./components/HowWeWorkPage";
+import HowWeWorkPage from "./components/howWeWorkPage/HowWeWorkPage";
 import MainPage from "./components/mainPage/MainPage";
 import NavBar from "./components/NavBar";
 import BlogPage from "./components/blogPage/BlogPage";
-import AccountPage from "./components/AccountPage";
+import AccountPage from "./components/accountPage/AccountPage";
 import PlansPage from "./components/plansPage/PlansPage";
 import ScrollToTop from "./components/ScrollToTop";
 

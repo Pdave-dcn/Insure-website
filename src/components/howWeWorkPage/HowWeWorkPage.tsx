@@ -3,7 +3,7 @@ import {
   slideLeftContainerVariants,
   slideLeftChildVariants,
   slideRightChildVariants,
-} from "./animationsVariants";
+} from "../animationsVariants";
 
 const HowWeWorkPage = () => {
   const elements = [
