@@ -76,12 +76,12 @@ const NavBar = () => {
         >
           BLOG
         </Link>
-        <a
-          href="#"
+        <Link
+          to={`${basePath}account`}
           className="text-dark-grayish-violet hover:text-very-dark-violet hover:font-bold transition-all"
         >
           ACCOUNT
-        </a>
+        </Link>
         <a
           href="#"
           className="border-2 border-very-dark-violet py-2 px-6 text-dark-grayish-violet hover:bg-very-dark-violet hover:text-white hover:font-bold transition-all"

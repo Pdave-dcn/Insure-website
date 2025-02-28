@@ -4,6 +4,7 @@ import HowWeWorkPage from "./components/HowWeWorkPage";
 import MainPage from "./components/mainPage/MainPage";
 import NavBar from "./components/NavBar";
 import BlogPage from "./components/blogPage/BlogPage";
+import AccountPage from "./components/AccountPage";
 
 function App() {
   const basePath = import.meta.env.BASE_URL;
@@ -17,6 +18,7 @@ function App() {
           <Route path={`${basePath}`} element={<MainPage />} />
           <Route path={`${basePath}how-we-work`} element={<HowWeWorkPage />} />
           <Route path={`${basePath}blog`} element={<BlogPage />} />
+          <Route path={`${basePath}account`} element={<AccountPage />} />
         </Routes>
       </main>
       <footer>
