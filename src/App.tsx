@@ -6,11 +6,13 @@ import NavBar from "./components/NavBar";
 import BlogPage from "./components/blogPage/BlogPage";
 import AccountPage from "./components/AccountPage";
 import PlansPage from "./components/plansPage/PlansPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const basePath = import.meta.env.BASE_URL;
   return (
     <>
+      <ScrollToTop />
       <header>
         <NavBar />
       </header>
