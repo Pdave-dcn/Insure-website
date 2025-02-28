@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import HowWeWorkPage from "./components/HowWeWorkPage";
 import MainPage from "./components/mainPage/MainPage";
 import NavBar from "./components/NavBar";
-import BlogPage from "./components/BlogPage";
+import BlogPage from "./components/blogPage/BlogPage";
 
 function App() {
   const basePath = import.meta.env.BASE_URL;
