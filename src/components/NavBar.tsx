@@ -1,9 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -50,6 +66,7 @@ const NavBar = () => {
           whileTap={{ scale: 0.9 }}
           src="images/logo.svg"
           alt="Logo icon"
+          onClick={handleLinkClick}
           className="object-contain cursor-pointer"
         />
       </Link>
@@ -112,6 +129,7 @@ const NavBar = () => {
               <motion.li variants={itemVariants}>
                 <Link
                   to={`${basePath}how-we-work`}
+                  onClick={handleLinkClick}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   HOW WE WORK
@@ -120,6 +138,7 @@ const NavBar = () => {
               <motion.li variants={itemVariants}>
                 <Link
                   to={`${basePath}blog`}
+                  onClick={handleLinkClick}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   BLOG
@@ -128,6 +147,7 @@ const NavBar = () => {
               <motion.li variants={itemVariants}>
                 <Link
                   to={`${basePath}account`}
+                  onClick={handleLinkClick}
                   className="text-white hover:text-gray-300 hover:font-bold transition-all"
                 >
                   ACCOUNT
@@ -136,6 +156,7 @@ const NavBar = () => {
               <motion.li variants={itemVariants}>
                 <Link
                   to={`${basePath}plans`}
+                  onClick={handleLinkClick}
                   className="border-2 py-2 px-8 text-white hover:bg-white hover:text-very-dark-violet hover:font-bold transition-all"
                 >
                   VIEW PLANS
