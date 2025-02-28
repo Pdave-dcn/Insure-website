@@ -1,3 +1,6 @@
+import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const elements = [
     {
@@ -6,7 +9,7 @@ const Footer = () => {
     },
     {
       title: "HELP ME",
-      links: ["FAQ", "", "TERMS OD USE", "PRIVACY POLICY", "COOKIES"],
+      links: ["FAQ", "", "TERMS OF USE", "PRIVACY POLICY", "COOKIES"],
     },
     {
       title: "CONTACT",
@@ -17,19 +20,41 @@ const Footer = () => {
       links: ["CAREERS", "PRESS", "LICENSES"],
     },
   ];
+
+  const basePath = import.meta.env.BASE_URL;
   return (
     <div className="relative flex flex-col items-center bg-light-gray">
       <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:items-center lg:w-full lg:px-30 lg:mt-10">
-        <img
-          src="images/logo.svg"
-          alt="Logo icon"
-          className="mb-4.5 mt-20 lg:mt-0 lg:mb-0"
-        />
+        <Link to={`${basePath}`}>
+          <motion.img
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            src="images/logo.svg"
+            alt="Logo icon"
+            className="object-contain cursor-pointer relative z-10"
+          />
+        </Link>
         <div className="flex items-center gap-4 p-4">
-          <img src="images/icon-facebook.svg" alt="Facebook icon" />
-          <img src="images/icon-twitter.svg" alt="Twitter icon" />
-          <img src="images/icon-pinterest.svg" alt="Pinterest icon" />
-          <img src="images/icon-instagram.svg" alt="Instagram icon" />
+          <img
+            src="images/icon-facebook.svg"
+            alt="Facebook icon"
+            className="socials__icon cursor-pointer"
+          />
+          <img
+            src="images/icon-twitter.svg"
+            alt="Twitter icon"
+            className="socials__icon cursor-pointer"
+          />
+          <img
+            src="images/icon-pinterest.svg"
+            alt="Pinterest icon"
+            className="socials__icon cursor-pointer"
+          />
+          <img
+            src="images/icon-instagram.svg"
+            alt="Instagram icon"
+            className="socials__icon cursor-pointer"
+          />
         </div>
       </div>
 
